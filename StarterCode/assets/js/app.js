@@ -73,6 +73,19 @@
         .attr("fill", "blue")
         .attr("opacity", ".5");
 
+    // Step 5a: Add text to Circles
+    // =================================
+    var textGroup = chartGroup.selectAll("text.my-text")
+        .data(censusData)
+        .enter()
+        .append("text")
+        .classed("my-text", true)
+        .attr("x", d => xLinearScale(d.healthcare))
+        .attr("y", d => yLinearScale(d.poverty))
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "central") 
+        .text(d => d.abbr)
+
     // Step 6: Initialize tool tip
     // ==============================
     const toolTip = d3.tip()
