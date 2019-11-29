@@ -8,9 +8,9 @@
 
     const margin = {
         top: 20,
-        right: 40,
-        bottom: 60,
-        left: 100
+        right: 20,
+        bottom: 20,
+        left: 20
     };
 
     const width = svgWidth - margin.left - margin.right;
@@ -39,11 +39,13 @@
     // Step 2: Create scale functions
     // ==============================
     const xLinearScale = d3.scaleLinear()
-        .domain([26, d3.max(censusData, d => d.healthcare)])
+        //.domain([26, d3.min(censusData, d => d.healthcare)])
+        .domain([26, 0])
         .range([0, width]);
 
     const yLinearScale = d3.scaleLinear()
-        .domain([22, d3.max(censusData, d => d.poverty)])
+        //.domain([22, d3.min(censusData, d => d.poverty)])
+        .domain([22, 8])
         .range([height, 0]);
 
     // Step 3: Create axis functions

@@ -29,3 +29,9 @@ body {
   margin: 0;
   font-size: 16px;
 }
+.axisText {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
