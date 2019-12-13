@@ -7,10 +7,10 @@
         svgHeight = 500;
 
     const margin = {
-        top: 20,
-        right: 20,
-        bottom: 20,
-        left: 20
+        top: 40,
+        right: 40,
+        bottom: 60,
+        left: 60
     };
 
     const width = svgWidth - margin.left - margin.right;
@@ -90,7 +90,8 @@
 
     // Step 6: Initialize tool tip
     // ==============================
-    const toolTip = d3.tip()
+    const toolTip = d3
+        .tip()
         .attr("class", "tooltip")
         .offset([80, -60])
         .html(function(d) {
@@ -114,14 +115,14 @@
     // Create axes labels
     chartGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left + 40)
+        .attr("y", 0 - margin.left)
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("class", "axisText")
         .text("Census Poverty");
 
     chartGroup.append("text")
-        .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
+        .attr("transform", `translate(${width / 2}, ${height + margin.top})`)
         .attr("class", "axisText")
         .text("Census Healthcare");
 })()
